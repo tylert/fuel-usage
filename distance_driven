@@ -1,0 +1,31 @@
+#!/usr/bin/perl
+
+# Suck in a useful header
+my $plotfile = <<PLOTFILE;
+set xdata time
+set timefmt "%Y/%m/%d"
+set format x "%Y/%m"
+set title "Distance Driven Over Time"
+set xlabel "Year/Month"
+set ylabel "Distance (km)"
+set grid
+set key outside
+#set terminal postscript
+#set output ".ps"
+set style line 1 lt 1 lw 2 ps 1 pt 7
+PLOTFILE
+
+# Plot each of the datafiles passed in
+$plotfile .= "plot";
+my $count = $#ARGV;
+foreach (@ARGV)
+{
+  $plotfile .= " \\\n";
+  $plotfile .= "\"$_\" using 2:1 with linespoints ls 1";
+  $plotfile .= "," if $count;
+  $count -= 1;
+}
+$plotfile .= "\n";
+
+# Moosh the result out to gnuplot
+system "echo '$plotfile' | gnuplot -persist";
