@@ -4,12 +4,13 @@
 my $plotfile = <<PLOTFILE;
 set xdata time
 set timefmt "%Y/%m/%d"
-set format x "%Y/%m"
+set format x "%y/%m"
 set title "Price Of Fuel Over Time"
 set xlabel "Year/Month"
 set ylabel "Price/L (\$)"
 set grid
 set key outside
+#set key left
 #set terminal postscript
 #set output ".ps"
 set style line 1 lt 1 lw 2 ps 1 pt 7
