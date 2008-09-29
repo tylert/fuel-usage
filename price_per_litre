@@ -7,7 +7,7 @@ set timefmt "%Y/%m/%d"
 set format x "%y/%m"
 set title "Price Of Fuel Over Time"
 set xlabel "Year/Month"
-set ylabel "Price/L (\$)"
+set ylabel "Price/L (CDN\$)"
 set grid
 set key outside
 #set key left
