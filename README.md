@@ -1,7 +1,6 @@
-fuel-usage
-==========
+# Fuel Usage
 
-Calculate totals with "tax on the tax" added on::
+Calculate totals with \"tax on the tax\" added on:
 
     # General formula (checksum totals)
     total = ((litres * fuel_rate) + (litres * carbon_tax_rate)) * HST_tax_rate
